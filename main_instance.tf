@@ -9,7 +9,7 @@ resource "opc_compute_instance" "terraform_instance" {
   name       = "terraform_instance"
   label      = "this is my first compute instance wusing terraform"
   shape      = "oc3"
-  image_list = "/Compute-a430291/ZABUSEINI@forsythe.com/Ubuntu.16.04-LTS.amd64.20170330"
+  image_list = "/Compute-${var.domain}/${var.user}/Ubuntu.16.04-LTS.amd64.20170330"
   ssh_keys   = ["${opc_compute_ssh_key.terraformKey.name}"]
 
   storage {
